@@ -1,34 +1,32 @@
 /** IconLink documentation
  */
-import React, { useEffect, useState } from "react";
+
 import {FontAwesomeIcon}  from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 
-import "./styles.css";
+import styles from "./styles.module.css";
+import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 
 export interface IconLinkProps {
-"data-test-id"?: string;
+  "data-test-id"?: string;
+  href: string;
+  label: string;
+  icon: IconDefinition;
 }
 
-export const IconLink = () => {
-  // * hooks
-  // const hook = () => {};
-
-  // * state
-  // const [something, useSomething] = useState(undefined);
-
-  // * useEffects
-  // useEffect(() => {
-  // first
-  // return ({}: IconLinkProps) => {
-  // second
-  // }
-  // }, [third])
-
+export const IconLink = ({href, label, icon, "data-test-id": dataTestId}: IconLinkProps) => {
   return (
-    <a href={link.href} rel="noreferrer" target="_blank" key={`link-${link.label}`} aria-label={link.label}>
-                <span className='label'>{link.label}</span>
-                <FontAwesomeIcon icon={link.icon} />
-            </a>
+    <a
+      href={href}
+      rel="noreferrer"
+      target="_blank"
+      key={`link-${label}`}
+      aria-label={label}
+      data-test-id={dataTestId}
+      className={clsx(styles.root)}
+    >
+      <span className='label'>{label}</span>
+      <FontAwesomeIcon icon={icon} />
+    </a>
   );
 };
