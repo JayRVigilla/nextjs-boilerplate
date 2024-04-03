@@ -25,7 +25,6 @@ export const IconLink = ({href, label, icon, "data-test-id": dataTestId}: IconLi
       key={`link-${label}`}
       aria-label={label}
       data-test-id={dataTestId}
-      // className={clsx(styles.root)}
       className="root"
       >
       <span className='label'>{label}</span>
