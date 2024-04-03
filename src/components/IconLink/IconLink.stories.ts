@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     href: "",
-    label: "Primary",
+    label: "Primy",
     icon: faFilePdf
   }
 };

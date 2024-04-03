@@ -17,6 +17,7 @@ export interface IconLinkProps {
 
 export const IconLink = ({href, label, icon, "data-test-id": dataTestId}: IconLinkProps) => {
   return (
+    <span className="root">
     <a
       href={href}
       rel="noreferrer"
@@ -26,9 +27,10 @@ export const IconLink = ({href, label, icon, "data-test-id": dataTestId}: IconLi
       data-test-id={dataTestId}
       // className={clsx(styles.root)}
       className="root"
-    >
+      >
       <span className='label'>{label}</span>
       <FontAwesomeIcon icon={icon} />
     </a>
+      </span>
   );
 };

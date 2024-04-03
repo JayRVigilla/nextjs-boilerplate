@@ -1,27 +1,38 @@
-a.root{
-  text-decoration: none;
+span.root{
+  display: flex;
+  padding: 8px;
   width: 100%;
+  height: 100%;
+  justify-content: center;
+
+  a{
+    text-decoration: none;
+    /* hide label when not hovering */
+    span.label{
+      display: none;
+    }
+  }
 
     &:hover {
+      a{
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--br-teal);
 
       /* hide icon and show label when hovering */
-      & > span.label {
-          display: block;
+      span.label {
+          display: flex;
+
+          & ~ svg {
+            display: none;
+            width: 0;
+          }
+        }
+
+        span.label{
           font-size: 1.08rem;
           font-weight: 600;
-          color: var(--br-teal);
-
-          & ~ * {
-            display: none;
-          }
+        }
       }
     }
-
-    /* hide label when not hovering */
-    span.label{
-      display: none;
-    }
-}
+  }
