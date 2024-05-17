@@ -1,0 +1,33 @@
+span.dropdown-selector.root{
+  display: flex;
+  flex-direction: column;
+
+  label{
+    margin-right: 4px;
+    font-size: large;
+  }
+
+  select {
+    padding: 4px 6px;
+    background-color: white;
+    border-radius: 6px;
+
+    &:focus{
+      outline: orange dashed 1px;
+  outline-offset: 2px;
+     }
+  }
+
+  &.dark-mode{
+    label{
+      color: white;
+    }
+
+    select{
+      color: white;
+      background-color: transparent;
+      border-color: white;
+    }
+  }
+
+}
