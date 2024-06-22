@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputLabel } from "../InputLabel";
 import { EyeIcon } from "../../../../icons/EyeIcon";
-import "./../styles.css"; // shared TextInput styles
+import "../styles.css"; // shared TextInput styles
 import "./styles.css"; // PasswordInput specific
 import { EyeBlindIcon } from "../../../../icons/EyeBlindIcon";
 

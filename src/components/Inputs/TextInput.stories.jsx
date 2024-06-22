@@ -5,14 +5,13 @@ import {
   PasswordInput,
   EmailInput,
   AutoCompleteTextInput,
-  InputTextList
+  InputTextList,
 } from "./index";
 import { fn } from "@storybook/test";
-import { JOB_TITLES } from "../../forms/SignUpVolunteerForm/constants";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
-  title: "components/TextInput",
+  title: "components/Inputs",
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -52,7 +51,7 @@ export const Demo = () => {
     passwordInput: "",
     emailInput: "",
     autoComplete: "",
-    inputTextList:["blah", "sandwich", "burrito"],
+    inputTextList: ["blah", "sandwich", "burrito"],
   };
   const [form, setForm] = useState(INITIAL_STATE);
 
@@ -72,7 +71,7 @@ export const Demo = () => {
         placeholder={"InputTextList"}
         label={"InputTextList"}
         value={form.inputTextList}
-        setValue={(val) => setForm({...form, inputTextList: val})}
+        setValue={(val) => setForm({ ...form, inputTextList: val })}
       />
       <BasicTextInput
         placeholder={"basicTextInput"}
@@ -103,7 +102,7 @@ export const Demo = () => {
         placeholder={"AutoCompleteInput"}
         label={"AutoCompleteInput"}
         value={form.autoComplete}
-        options={JOB_TITLES}
+        options={["one", "two", "three", "burrito"]}
         onChange={(e) => {
           setForm({ ...form, autoComplete: e.target.value });
         }}

@@ -16,29 +16,29 @@ export default {
   argTypes: {},
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          alignContent: "space-around",
-          display: "flex",
-          flexDirection: "column",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          margin: 12,
-          minHeight: 200,
-          padding: 8,
-          width: "100%",
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   () => (
+  //     <div
+  //       style={{
+  //         alignContent: "space-around",
+  //         display: "flex",
+  //         flexDirection: "column",
+  //         flexWrap: "wrap",
+  //         justifyContent: "space-evenly",
+  //         margin: 12,
+  //         minHeight: 200,
+  //         padding: 8,
+  //         width: "100%",
+  //       }}
+  //     >
+  //       <Modal />
+  //     </div>
+  //   ),
+  // ],
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Demo = () => {
+export const Demo: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -59,7 +59,7 @@ export const Demo = () => {
         Click to open Modal
       </button>
 
-      <Modal isOpen={isOpen} closeModal={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen}>
         Text to observe functionality
       </Modal>
     </div>

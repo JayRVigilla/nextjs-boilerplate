@@ -6,14 +6,22 @@
  * showing text/data that is shown without a requirement of interaction.
  */
 import { useEffect, useRef } from "react";
-import { CloseCircleIcon } from "../../../icons/CloseCircleIcon";
+import {CloseCircleIcon} from "../icons/CloseCircleIcon";
 import "./styles.css";
 
-export const Modal = ({ children, className, isOpen, closeModal }) => {
-  const dialogRef = useRef();
+type tModalProps = {
+  children: any;
+  className?: string;
+  isOpen: boolean;
+}
+
+export const Modal = ({ children, className, isOpen }: tModalProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeModal = () => {dialogRef?.current?.close()};
+
   useEffect(() => {
     if (!dialogRef?.current) return;
-
+    // assures that Modal is opened when prop changes
     if (isOpen) {
       dialogRef.current.showModal();
     } else {

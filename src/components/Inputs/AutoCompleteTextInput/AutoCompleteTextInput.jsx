@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import { InputLabel } from "../InputLabel";
 import { Typography } from "../../Typography/Typography";
 import { ChevronIcon } from "../../../../icons/ChevronIcon";
-import "./../styles.css"; // shared TextInput styles
+import "../styles.css"; // shared TextInput styles
 import "./styles.css"; // AutoCompleteInput specific
 
 export const AutoCompleteTextInput = ({

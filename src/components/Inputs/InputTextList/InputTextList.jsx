@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputLabel } from "../InputLabel";
 import { ListBadge } from "./ListBadge/ListBadge";
-import "./../styles.css"; // shared TextInput styles
+import "../styles.css"; // shared TextInput styles
 import "./styles.css"; // InputTextList specific
 import { CloseCircleIcon } from "../../../../icons/CloseCircleIcon";
 
@@ -13,10 +13,10 @@ export const InputTextList = ({
   placeholder,
   className,
   required = false,
-  maxBadges=5,
+  maxBadges = 5,
 }) => {
   // the value of what is in the input
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);

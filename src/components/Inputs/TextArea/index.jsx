@@ -1,5 +1,5 @@
 import { InputLabel } from "../InputLabel";
-import "./../styles.css"; // shared TextInput styles
+import "../styles.css"; // shared TextInput styles
 import "./styles.css"; // TextArea specific
 
 export const TextArea = ({
