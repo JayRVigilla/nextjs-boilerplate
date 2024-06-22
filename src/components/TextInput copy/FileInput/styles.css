@@ -1,0 +1,19 @@
+span.root.FileInput {
+  width: fit-content;
+  padding: 2px;
+  margin: 8px 0;
+
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}

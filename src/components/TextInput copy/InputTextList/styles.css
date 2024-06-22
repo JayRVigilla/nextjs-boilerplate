@@ -1,0 +1,55 @@
+/* styles specific to InputTextList
+      InputTextList has an input and icon inside this container*/
+span.root.TextInput.InputTextList {
+  label {
+    span.input-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--white);
+      border: 2px solid var(--purple-header);
+      border-radius: 6px;
+
+      /* input.InputTextList {} */
+      input.InputTextList {
+        width: 100%;
+        border: none;
+        margin: 0;
+
+        /* remove focus styling on input to  hide the real edges */
+        &:focus {
+          outline: none;
+        }
+      }
+
+      /* add focus styling to container (aka "perceived input edges") */
+      &:has(input.InputTextList:focus) {
+        border-color: var(--lt-purple1);
+      }
+
+      span.fake-button {
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+        cursor: pointer;
+
+        &:hover {
+          svg.root.CloseCircleIcon {
+            path {
+              fill: var(----lt-purple1)
+            }
+          }
+        }
+
+        svg.root.CloseCircleIcon {
+          rotate: 45deg;
+        }
+      }
+    }
+
+    div.badge-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

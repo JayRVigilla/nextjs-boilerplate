@@ -1,0 +1,45 @@
+dialog.root.Modal {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 16px;
+  background-color: var(--white);
+
+  /* styles for the "veil" */
+  &::backdrop {
+    background-color: var(--white50);
+    background-color: var(--lt-purple2-70);
+  }
+
+  div.close-button-container {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      border-radius: 24px;
+
+      &:hover {
+        svg>path {
+          fill: var(--orange)
+        }
+      }
+
+      /* styles while button is clicked: invert colors */
+      &:active {
+        svg {
+          border-radius: 50%;
+          background-color: var(--purple-header);
+
+          path {
+            fill: var(--white)
+          }
+        }
+      }
+
+    }
+  }
+}

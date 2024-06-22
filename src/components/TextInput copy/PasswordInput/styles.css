@@ -1,0 +1,59 @@
+/* styles specific to PasswordInput
+      PasswordInput has an input and icon inside this container*/
+span.root.TextInput.PasswordInput {
+  span.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    border: 2px solid var(--purple-header);
+    border-radius: 6px;
+
+    input.PasswordInput {
+      width: 100%;
+      border: none;
+      margin: 0;
+
+      /* remove focus styling on input to  hide the real edges */
+      &:focus {
+        outline: none;
+      }
+    }
+
+    /* add focus styling to container (aka "perceived input edges") */
+    &:has(input.PasswordInput:focus) {
+      border-color: var(--lt-purple1);
+    }
+
+    /* hiding button styles */
+    span.fake-button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      display: flex;
+
+      svg {
+        width: 20px;
+        height: 16px;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+
+          path {
+            fill: var(--orange)
+          }
+        }
+
+
+      }
+
+      /* matched focus styling visible when tabbing through inputs */
+      &:focus {
+        outline-color: var(--lt-purple1);
+        border-radius: 50%;
+      }
+
+    }
+  }
+}

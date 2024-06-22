@@ -1,0 +1,87 @@
+/* styles specific to AutoCompleteTextInput
+      AutoCompleteTextInput has an input and icon inside this container*/
+span.root.TextInput.AutoCompleteTextInput {
+  span.auto-complete-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    border: 2px solid var(--purple-header);
+    border-radius: 6px;
+
+    &.open {
+      border-color: var(--lt-purple1);
+      border-radius: 6px 6px 0 0;
+    }
+
+    input.AutoComplete {
+      width: 100%;
+      border: none;
+      margin: 0;
+
+      /* remove focus styling on input to  hide the real edges */
+      &:focus {
+        outline: none;
+      }
+    }
+
+    /* add focus styling to container (aka "perceived input edges") */
+    &:has(input.AutoComplete:focus) {
+      border-color: var(--lt-purple1);
+    }
+
+    /* hiding button styles */
+    span.fake-button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      display: flex;
+      margin-right: 20px;
+
+      &.flipped {
+        rotate: 180deg;
+        /* margin: 0 0 0 20px; */
+      }
+
+      svg {
+        width: 20px;
+        height: 16px;
+
+        &:hover {
+          cursor: pointer;
+
+          path {
+            fill: var(--orange)
+          }
+        }
+
+
+      }
+
+      /* matched focus styling visible when tabbing through inputs */
+      &:focus {
+        outline-color: var(--lt-purple1);
+        border-radius: 50%;
+      }
+
+    }
+  }
+
+  div.options-list {
+    background-color: var(--white);
+    min-height: calc(24px * 1.25);
+    max-height: calc(24px * 4.6);
+    overflow-x: scroll;
+    border-radius: 0 0 6px 6px;
+    border: 2px solid var(--lt-purple1);
+    border-top: 0;
+
+    option {
+      padding: 6px 20px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

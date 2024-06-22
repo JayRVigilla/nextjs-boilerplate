@@ -1,0 +1,130 @@
+.Typography.root {
+  font-family: Poppins;
+  /* preserve newline characters and white-space */
+  white-space: pre-wrap;
+
+  /* Colors - derived from rootStyles variables
+        can extend as we get more color variables  */
+  &.color {
+    &.white {
+      color: var(--white)
+    }
+
+    &.black {
+      color: var(--black)
+    }
+
+    &.lt-purple2 {
+      color: var(--lt-purple2)
+    }
+
+    &.lt-purple1 {
+      color: var(--lt-purple1)
+    }
+
+    &.purple-text {
+      color: var(--purple-text)
+    }
+
+    &.purple-header {
+      color: var(--purple-header)
+    }
+
+    &.grey {
+      color: var(--grey)
+    }
+
+    &.red {
+      color: var(--red)
+    }
+    &.purple {
+      color: var(--purple)
+    }
+  }
+
+  /* used in InputLabel to add asterisk to required fields */
+  &.required:after{
+    content: "*";
+  }
+
+  /* Headings */
+  &.hLg {
+    /* WF Headings/Heading L */
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.01em;
+  }
+
+  &.hMd {
+    /* WF Headings/Heading M; */
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41.6px;
+  }
+
+
+  &.hSm {
+    /* WF Headings/Heading S */
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.6px;
+  }
+
+  &.hXs {
+    /* WF Headings/Heading XS */
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  /* Body Text */
+  /* &.bLg{ */
+  /* WF Body/Body Large */
+  /* Not found, but existence implied */
+  /* } */
+
+  &.bMd {
+    /* WF Body/Body Medium */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &.bSm {
+    /* WF Body/Body Small */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+
+    &.bold {
+      font-weight: 600;
+    }
+
+  }
+
+  &.bXs {
+    /* styleName: WF Body/Body Extra Small; */
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  /* WF Buttons/Button Medium */
+  &.btnMd {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &.btnSm {
+    /* WF Buttons/Button Small */
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+}
