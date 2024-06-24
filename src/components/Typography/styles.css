@@ -1,9 +1,9 @@
 .Typography.root {
-  font-family: Poppins;
+  /* font-family: Poppins; */
   /* preserve newline characters and white-space */
   white-space: pre-wrap;
 
-  /* Colors - derived from rootStyles variables
+  /* Colors - derived from globals.css variables
         can extend as we get more color variables  */
   &.color {
     &.white {
@@ -14,7 +14,8 @@
       color: var(--black)
     }
 
-    &.lt-purple2 {
+    /* saved as examples, these variables are  */
+    /* &.lt-purple2 {
       color: var(--lt-purple2)
     }
 
@@ -39,7 +40,7 @@
     }
     &.purple {
       color: var(--purple)
-    }
+    } */
   }
 
   /* used in InputLabel to add asterisk to required fields */

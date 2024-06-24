@@ -9,12 +9,23 @@
  * @params options - array of strings to filter while typing
  */
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { InputLabel } from "../InputLabel";
 import { Typography } from "../../Typography/Typography";
-import { ChevronIcon } from "../../../../icons/ChevronIcon";
+import { ChevronIcon } from "@icons/ChevronIcon";
 import "../styles.css"; // shared TextInput styles
 import "./styles.css"; // AutoCompleteInput specific
+
+export type tAutoCompleteTextInputProps = {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLOptionElement>) => void;
+  label: string;
+  name: string;
+  placeholder?: string;
+  className?: string;
+  required?: boolean;
+  options: string[];
+};
 
 export const AutoCompleteTextInput = ({
   value,
@@ -25,19 +36,32 @@ export const AutoCompleteTextInput = ({
   className,
   required = false,
   options,
-}) => {
+}:tAutoCompleteTextInputProps) => {
   const [optionsList, setOptionsList] = useState(options ?? []);
   const [isOpen, setIsOpen] = useState(false);
 
-  const filterOptions = (text) => {
+  const filterOptions = (text: string) => {
     return [...options].filter((opt) => {
       return opt.toLowerCase().includes(text.toLowerCase());
     });
   };
 
-  const handleChange = (event) => {
+  // input value changes state
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event);
     const filtered = filterOptions(event.target.value.trim());
+    setOptionsList(filtered);
+  };
+
+  const handleOptionSelect = (event: React.MouseEvent<HTMLOptionElement>) => {
+    onChange(event);
+    // const filtered = filterOptions(event.target.value.trim());
+
+    // Type assertion to ensure TypeScript knows event.target is an HTMLOptionElement
+    const target = event.target as HTMLOptionElement;
+
+    // Access the value property of HTMLOptionElement
+    const filtered = filterOptions(target.value);
     setOptionsList(filtered);
   };
 
@@ -76,7 +100,8 @@ export const AutoCompleteTextInput = ({
               <option
                 key={opt}
                 onClick={(event) => {
-                  handleChange(event);
+                  // handleChange(event);
+                  handleOptionSelect(event);
                   setIsOpen(false);
                 }}
               >

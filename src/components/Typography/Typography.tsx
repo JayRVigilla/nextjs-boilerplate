@@ -16,6 +16,9 @@
  *
  */
 import "./styles.css";
+type tHeadingVariant = "hLg" | "hMd" | "hSm" | "hXs";
+type tBodyVariant = "bLg" | "bMd" | "bSm" | "bXs";
+type tButtonVariant = "btnLg" | "btnMd" | "btnSm" | "btnXs";
 
 const mapVariantToHtmlElement = {
   // Headings
@@ -36,6 +39,14 @@ const mapVariantToHtmlElement = {
   btnSm: "span" /* WF Buttons/Button Small */,
 };
 
+export type tTypographyProps = {
+  text: string;
+  variant: tHeadingVariant | tBodyVariant | tButtonVariant;
+  color: string;
+  className: string;
+  htmlTag: string;
+};
+
 export const Typography = ({
   text,
   variant,
@@ -53,11 +64,13 @@ export const Typography = ({
     HtmlElement
   ) => {
     return (
-    <HtmlElement
-      className={`root Typography ${variant} ${className ? className : ''} color ${color}`}>
-      {text}
-    </HtmlElement>
-  )};
+      <HtmlElement
+        className={`root Typography ${variant} ${className ? className : ""} color ${color}`}
+      >
+        {text}
+      </HtmlElement>
+    );
+  };
 
   return DynamicallyCreatedHtmlElement(
     htmlTag ?? mapVariantToHtmlElement[variant]

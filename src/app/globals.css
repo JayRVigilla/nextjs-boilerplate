@@ -1,4 +1,11 @@
 :root {
   display: flex;
 
+  /*
+  Color Variables
+  As you add color variables, add to the COLORS constant in src/utils/colors.ts */
+  --white: #FFFFFF;
+  --black: #000;
+
+
 }
